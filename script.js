@@ -134,13 +134,13 @@ function displayCMSData(data) {
     console.log("CMS Data:", data); // 用於調試
 
     // 檢查資料結構
-    if (!data || typeof data !== "object" || !data.CMSLiveList || !Array.isArray(data.CMSLiveList.CMSLives)) {
+    if (!data || typeof data !== "object" || !Array.isArray(data.CMSLives)) {
         console.warn("API 回傳資料可能不是預期的結構。", data);
         document.getElementById("cmsDisplay").innerHTML = "<p>未找到任何 CMS 資料。</p>";
         return;
     }
 
-    const cmsLives = data.CMSLiveList.CMSLives;
+    const cmsLives = data.CMSLives;
     console.log("CMSLives:", cmsLives); // 用於調試
 
     if (!cmsLives || cmsLives.length === 0) {
